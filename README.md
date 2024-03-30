@@ -53,7 +53,7 @@ conda create -n deadiff python=3.9.2
 conda activate deadiff
 conda install pytorch==2.0.0 torchvision==0.15.0 torchaudio==2.0.0 pytorch-cuda=11.8 -c pytorch -c nvidia
 pip install -r requirements.txt
-pip install git+https://github.com/salesforce/LAVIS.git -i "https://bytedpypi.byted.org/simple"
+pip install -e .
 ```
 
 ## 💫 Inference
@@ -67,9 +67,6 @@ sh scripts/inference.sh
 ## 📢 Disclaimer
 We develop this repository for RESEARCH purposes, so it can only be used for personal/research/non-commercial purposes.
 ****
-
-## 🌟 Star History
-[![Star History Chart](https://api.star-history.com/svg?repos=Tianhao-Qi/DEADiff_code&type=Date)](https://star-history.com/#Tianhao-Qi/DEADiff_code&Date)
 
 ## ✈️ Citation
 

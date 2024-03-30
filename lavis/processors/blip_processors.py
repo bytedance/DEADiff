@@ -68,39 +68,6 @@ class BlipCaptionProcessor(BaseProcessor):
         return caption
 
 
-@registry.register_processor("blip_question")
-class BlipQuestionProcessor(BaseProcessor):
-    def __init__(self, max_words=50):
-        self.max_words = max_words
-
-    def __call__(self, question):
-        return self.pre_question(question)
-
-    @classmethod
-    def from_config(cls, cfg=None):
-        if cfg is None:
-            cfg = OmegaConf.create()
-
-        max_words = cfg.get("max_words", 50)
-
-        return cls(max_words=max_words)
-
-    def pre_question(self, question):
-        question = re.sub(
-            r"([.!\"()*#:;~])",
-            "",
-            question.lower(),
-        )
-        question = question.rstrip(" ")
-
-        # truncate question
-        question_words = question.split(" ")
-        if len(question_words) > self.max_words:
-            question = " ".join(question_words[: self.max_words])
-
-        return question
-
-
 @registry.register_processor("blip_image_train")
 class BlipImageTrainProcessor(BlipImageBaseProcessor):
     def __init__(
@@ -192,48 +159,3 @@ class BlipImageEvalProcessor(BlipImageBaseProcessor):
         std = cfg.get("std", None)
 
         return cls(image_size=image_size, mean=mean, std=std)
-
-
-@registry.register_processor("blip2_image_train")
-class Blip2ImageTrainProcessor(BlipImageBaseProcessor):
-    def __init__(
-        self, image_size=364, mean=None, std=None, min_scale=0.5, max_scale=1.0
-    ):
-        super().__init__(mean=mean, std=std)
-
-        self.transform = transforms.Compose(
-            [
-                transforms.RandomResizedCrop(
-                    image_size,
-                    scale=(min_scale, max_scale),
-                    interpolation=InterpolationMode.BICUBIC,
-                ),
-                transforms.RandomHorizontalFlip(),
-                transforms.ToTensor(),
-                self.normalize,
-            ]
-        )
-
-    def __call__(self, item):
-        return self.transform(item)
-
-    @classmethod
-    def from_config(cls, cfg=None):
-        if cfg is None:
-            cfg = OmegaConf.create()
-
-        image_size = cfg.get("image_size", 364)
-
-        mean = cfg.get("mean", None)
-        std = cfg.get("std", None)
-
-        min_scale = cfg.get("min_scale", 0.5)
-        max_scale = cfg.get("max_scale", 1.0)
-
-        return cls(
-            image_size=image_size,
-            mean=mean,
-            std=std,
-            min_scale=min_scale,
-            max_scale=max_scale,
-        )
