@@ -29,7 +29,7 @@ From University of Science and Technology of China and ByteDance.
 
 
 ## 📝 Changelog
-- __[2024.3.29]__: 🔥🔥 Release the inference code and pretrained checkpoint.
+- __[2024.4.3]__: 🔥🔥 Release the inference code and pretrained checkpoint.
 - __[2024.3.5]__: 🔥🔥 Release the project page.
 
 
@@ -37,14 +37,6 @@ From University of Science and Technology of China and ByteDance.
 - [x] Release the inference code.
 - [ ] Release training data.
 
-
-## 🧰 Models
-
-|Model|Resolution|Checkpoint|
-|:---------|:---------|:--------|
-|DEADiff|512x512|[Hugging Face]()|
-
-It takes approximately 2.5 seconds to generate a 512×512 image using a single NVIDIA A100 (80G) GPU. A GPU with at least 12G GPU memory is required to perform the inference process.
 
 ## ⚙️ Setup
 
@@ -58,11 +50,21 @@ pip install -e .
 
 ## 💫 Inference
 
-1) Download the pretrained model and put it under ./pretrained/.
+1) Download the pretrained model from [Hugging Face](https://huggingface.co/qth/DEADiff/tree/main) and put it under ./pretrained/.
 2) Run the commands in terminal.
-```bash
-sh scripts/inference.sh
+```python3
+python3 scripts/app.py
 ```
+The Gradio app allows you to transfer style from the reference image. Just try it for more details.
+
+Prompt: "A curly-haired boy"
+![p](https://github.com/Tianhao-Qi/DEADiff_code_private/assets/37017794/bc0ebbf5-9bc9-4397-a0f6-dc291527571d)
+
+Prompt: "A robot"
+![p](https://github.com/Tianhao-Qi/DEADiff_code_private/assets/37017794/4b7bb264-aabb-42ae-bdc3-c20ebae5c0e6)
+
+Prompt: "A motorcycle"
+![p](https://github.com/Tianhao-Qi/DEADiff_code_private/assets/37017794/f23f8c4f-b72e-463c-9855-9767941e4932)
 
 ## 📢 Disclaimer
 We develop this repository for RESEARCH purposes, so it can only be used for personal/research/non-commercial purposes.

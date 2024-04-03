@@ -157,20 +157,21 @@ def interface(bd_inference):
             subject_text = gr.Dropdown(
                     ["None", "style", "content", "style & content"], label="blip qformer文本输入", value="style"
                 )
-            batch_size = gr.Slider(1, 8, value=8, step=1, label="出图数量(batch_size)")
-            ddim = gr.Radio(
-                        choices=["ddim", "Euler a"],
-                        label=f"Sampler",
-                        interactive=True,
-                        value="ddim",
-                    )
-            ddim_steps = gr.Slider(10, 50, value=20, step=1, label="采样步数(Steps)", info="Choose between 10 and 50")
-            scale = gr.Slider(5, 15, value=8, step=1, label="描述词关联度(CFG scale)", info="Choose between 5 and 15")
-            img_weight = gr.Slider(0, 2, value=1.0, step=0.1, label="img embedding加权权重", info="Choose between 0 and 1")
-            seed = gr.Number(value=-1,minimum=-1,step=1,label="随机种子(Seed)",info="input -1 for random generation")
         with gr.Column():
             image_output = gr.Gallery(label="Result", ).style(columns=[2], rows=[2], object_fit="contain", height='auto')
             image_button = gr.Button("Generate")
+    with gr.Row():
+        batch_size = gr.Slider(1, 8, value=4, step=1, label="出图数量(batch_size)")
+        ddim = gr.Radio(
+                    choices=["ddim", "Euler a"],
+                    label=f"Sampler",
+                    interactive=True,
+                    value="ddim",
+                )
+        ddim_steps = gr.Slider(10, 50, value=50, step=1, label="采样步数(Steps)", info="Choose between 10 and 50")
+        scale = gr.Slider(5, 15, value=8, step=1, label="描述词关联度(CFG scale)", info="Choose between 5 and 15")
+        img_weight = gr.Slider(0, 2, value=1.0, step=0.1, label="img embedding加权权重", info="Choose between 0 and 1")
+        seed = gr.Number(value=-1,minimum=-1,step=1,label="随机种子(Seed)",info="input -1 for random generation")
 
     inputs=[
             prompt,

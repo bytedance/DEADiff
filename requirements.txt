@@ -43,6 +43,7 @@ numpy==1.22.0
 safetensors==0.4.2
 gradio==3.50.2
 xformers==0.0.17
+httpx==0.23.3
 bson
 spacy
 pycocoevalcap
