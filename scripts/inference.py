@@ -1,3 +1,17 @@
+# Copyright (2024) Bytedance Ltd. and/or its affiliates 
+
+# Licensed under the Apache License, Version 2.0 (the "License"); 
+# you may not use this file except in compliance with the License. 
+# You may obtain a copy of the License at 
+
+#     http://www.apache.org/licenses/LICENSE-2.0 
+
+# Unless required by applicable law or agreed to in writing, software 
+# distributed under the License is distributed on an "AS IS" BASIS, 
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+# See the License for the specific language governing permissions and 
+# limitations under the License. 
+
 import argparse, os, sys, glob
 from cgitb import text
 from copy import deepcopy
@@ -256,7 +270,7 @@ def main():
         with precision_scope("cuda"):
             with model.ema_scope():
                 tic = time.time()
-                for ref_image, prompt, seed in zip(os.listdir(opt.ref_images), prompts, seeds):
+                for ref_image, prompt, seed in zip(sorted(os.listdir(opt.ref_images)), prompts, seeds):
                     ref_image = os.path.join(opt.ref_images, ref_image)
                     for n in trange(opt.n_iter, desc="Sampling", disable =not accelerator.is_main_process):
                         seed_everything(seed)

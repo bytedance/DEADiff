@@ -44,6 +44,7 @@ From University of Science and Technology of China and ByteDance.
 conda create -n deadiff python=3.9.2
 conda activate deadiff
 conda install pytorch==2.0.0 torchvision==0.15.0 torchaudio==2.0.0 pytorch-cuda=11.8 -c pytorch -c nvidia
+pip install git+https://github.com/salesforce/LAVIS.git@20230801-blip-diffusion-edit
 pip install -r requirements.txt
 pip install -e .
 ```
