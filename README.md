@@ -1,12 +1,13 @@
-# DEADiff: An Efficient Stylization Diffusion Model with Disentangled Representations (CVPR 2024)
+# DEADiff: An Efficient Stylization Diffusion Model with Disentangled Representations ([CVPR 2024 Highlight](https://cvpr.thecvf.com/virtual/2024/poster/29773))
 
 <div align="center">
 
- <a href='https://arxiv.org/abs/2403.06951'><img src='https://img.shields.io/badge/arXiv-2403.06951-b31b1b.svg'></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
- <a href='https://tianhao-qi.github.io/DEADiff/'><img src='https://img.shields.io/badge/Project-Page-Green'></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ <a href='https://openaccess.thecvf.com/content/CVPR2024/html/Qi_DEADiff_An_Efficient_Stylization_Diffusion_Model_with_Disentangled_Representations_CVPR_2024_paper.html'><img src='https://img.shields.io/badge/Paper-CVPR%202024-blue.svg' alt='Paper: CVPR 2024'></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ <a href='https://arxiv.org/abs/2403.06951'><img src='https://img.shields.io/badge/arXiv-2403.06951-b31b1b.svg' alt='arXiv: 2403.06951'></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ <a href='https://tianhao-qi.github.io/DEADiff/'><img src='https://img.shields.io/badge/Project-Page-Green' alt='Project Page'></a>
 
 
-_**[Tianhao Qi*](https://github.com/Tianhao-Qi/), [Shancheng Fang](https://tothebeginning.github.io/), [Yanze Wu✝](https://tothebeginning.github.io/), [Hongtao Xie✉](https://imcc.ustc.edu.cn/_upload/tpl/0d/13/3347/template3347/xiehongtao.html), [Jiawei Liu](https://scholar.google.com/citations?user=X21Fz-EAAAAJ&hl=en&authuser=1), <br>[Lang Chen](https://scholar.google.com/citations?user=h5xex20AAAAJ&hl=zh-CN), [Qian He](https://scholar.google.com/citations?view_op=list_works&hl=zh-CN&authuser=1&user=9rWWCgUAAAAJ), [Yongdong Zhang](https://scholar.google.com.hk/citations?user=hxGs4ukAAAAJ&hl=zh-CN)**_
+_**[Tianhao Qi*](https://github.com/Tianhao-Qi/), [Shancheng Fang](https://csse.szu.edu.cn/en/pages/user/index?id=1362), [Yanze Wu✝](https://tothebeginning.github.io/), [Hongtao Xie✉](https://imcc.ustc.edu.cn/_upload/tpl/0d/13/3347/template3347/xiehongtao.html), [Jiawei Liu](https://scholar.google.com/citations?user=X21Fz-EAAAAJ&hl=en&authuser=1), <br>[Lang Chen](https://scholar.google.com/citations?user=h5xex20AAAAJ&hl=zh-CN), [Qian He](https://scholar.google.com/citations?view_op=list_works&hl=zh-CN&authuser=1&user=9rWWCgUAAAAJ), [Yongdong Zhang](https://scholar.google.com.hk/citations?user=hxGs4ukAAAAJ&hl=zh-CN)**_
 <br><br>
 (*Works done during the internship at ByteDance, ✝Project Lead, ✉Corresponding author)
 
@@ -38,8 +39,10 @@ From University of Science and Technology of China and ByteDance.
 
 
 ## 📝 Changelog
-- __[2024.4.3]__: 🔥🔥 Release the inference code and pretrained checkpoint.
-- __[2024.3.5]__: 🔥🔥 Release the project page.
+
+- **`[2025.07.06]`**: 🔥🔥 Release the ControlNet inference code for Canny-guided and depth-guided style transfer.
+- **`[2024.04.03]`**: 🔥🔥 Release the inference code and pretrained checkpoint.
+- **`[2024.03.05]`**: 🔥🔥 Release the project page.
 
 
 ## ⏳ TODO
@@ -103,13 +106,15 @@ We develop this repository for RESEARCH purposes, so it can only be used for per
 ## ✈️ Citation
 
 ```bibtex
-@article{qi2024deadiff,
+@inproceedings{qi2024deadiff,
   title={DEADiff: An Efficient Stylization Diffusion Model with Disentangled Representations},
   author={Qi, Tianhao and Fang, Shancheng and Wu, Yanze and Xie, Hongtao and Liu, Jiawei and Chen, Lang and He, Qian and Zhang, Yongdong},
-  journal={arXiv preprint arXiv:2403.06951},
-  year={2024}
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  month={June},
+  year={2024},
+  pages={8693--8702}
 }
 ```
 
 ## 📭 Contact
-If your have any comments or questions, feel free to contact [qth@mail.ustc.edu.cn](qth@mail.ustc.edu.cn)
+If you have any comments or questions, feel free to contact [qth@mail.ustc.edu.cn](mailto:qth@mail.ustc.edu.cn).
